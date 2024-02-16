@@ -10,6 +10,18 @@ public class medicalrecord {
 
     ////NOT DONE
     public medicalrecord(Location location,String treatmentDetails, String dateOfTreatment){
+        // Check if any arguments are null and if so throw illegal argument exception
+        if (location == null || treatmentDetails == null || dateOfTreatment == null) {
+            throw new IllegalArgumentException("Location, treatment details, and date of treatment cannot be null.");
+        }
+
+        // Check the format of dateOfTreatment
+        try {
+            java.time.LocalDate.parse(dateOfTreatment, java.time.format.DateTimeFormatter.ISO_LOCAL_DATE);
+        } catch (java.time.format.DateTimeParseException e) {
+            throw new IllegalArgumentException("Invalid date format. Please use yyyy-MM-dd.");
+        }
+
         this.location = location;
         this.treatmentDetails = treatmentDetails;
         this.dateOfTreatment = dateOfTreatment;
