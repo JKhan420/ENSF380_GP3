@@ -1,6 +1,6 @@
 package edu.ucalgary.oop;
-
-public class medicalrecord {
+// GROUP 22
+public class MedicalRecord {
     private Location location;
     private String treatmentDetails;
     private String dateOfTreatment;
@@ -9,7 +9,7 @@ public class medicalrecord {
     // Constructor
 
     ////NOT DONE
-    public medicalrecord(Location location,String treatmentDetails, String dateOfTreatment){
+    public MedicalRecord(Location location,String treatmentDetails, String dateOfTreatment){
         // Check if any arguments are null and if so throw illegal argument exception
         if (location == null || treatmentDetails == null || dateOfTreatment == null) {
             throw new IllegalArgumentException("Location, treatment details, and date of treatment cannot be null.");
@@ -45,6 +45,11 @@ public class medicalrecord {
         this.treatmentDetails = treatmentDetails;
     }
     public void setDateOfTreatment(String dateOfTreatment) {
+        try {
+            java.time.LocalDate.parse(dateOfTreatment, java.time.format.DateTimeFormatter.ISO_LOCAL_DATE);
+        } catch (java.time.format.DateTimeParseException e) {
+            throw new IllegalArgumentException("Invalid date format. Please use yyyy-MM-dd.");
+        }
         this.dateOfTreatment = dateOfTreatment;
     }
 

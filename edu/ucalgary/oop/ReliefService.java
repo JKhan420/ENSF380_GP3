@@ -2,6 +2,7 @@ package edu.ucalgary.oop;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+// GROUP 22
 public class ReliefService {
     // FIELDS
     private Inquirer inquirer;
@@ -18,7 +19,6 @@ public class ReliefService {
             LocalDate.parse(dateOfInquiry, DateTimeFormatter.ISO_LOCAL_DATE);
         } catch (DateTimeParseException e) {
             throw new IllegalArgumentException("Invalid entry date format. Please use YYYY-MM-DD.");
-            return;
         }
         this.dateOfInquiry = dateOfInquiry;
         this.infoProvided = infoProvided;
@@ -63,7 +63,7 @@ public class ReliefService {
             LocalDate.parse(dateOfInquiry, DateTimeFormatter.ISO_LOCAL_DATE);
         } catch (DateTimeParseException e) {
             throw new IllegalArgumentException("Invalid entry date format. Please use YYYY-MM-DD.");
-            return;
+           
         }
         this.dateOfInquiry = dateOfInquiry;
     } 
@@ -77,6 +77,6 @@ public class ReliefService {
     }
     
     public String getLogDetails() {
-        return "Inquirer: " + this.inquirer.getFullName() + ", Missing Person: " + missingPerson.getName() + ", Date of Inquiry: " + dateOfInquiry + ", Info Provided: " + infoProvided + ", Last Known Location: " + lastKnownLocation.getAddress();
+        return "Inquirer: " + this.inquirer.getFirstName() + ", Missing Person: " + missingPerson.getFirstName() + missingPerson.getLastName() + ", Date of Inquiry: " + dateOfInquiry + ", Info Provided: " + infoProvided + ", Last Known Location: " + lastKnownLocation.getName();
     }
 }

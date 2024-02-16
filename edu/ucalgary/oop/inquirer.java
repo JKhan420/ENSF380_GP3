@@ -1,14 +1,14 @@
 package edu.ucalgary.oop;
-
-public class inquirer {
-    private String FIRST_NAME;
-    private String LAST_NAME;
-    private String INFO;
-    private String SERVICES_PHONE;
+// GROUP 22
+public class Inquirer {
+    private final String FIRST_NAME;
+    private final String LAST_NAME;
+    private final String INFO;
+    private final String SERVICES_PHONE;
 
 
     // Constructor
-    public inquirer(String FIRST_NAME, String LAST_NAME, String SERVICES_PHONE, String INFO){
+    public Inquirer(String FIRST_NAME, String LAST_NAME, String SERVICES_PHONE, String INFO){
         this.FIRST_NAME = FIRST_NAME;
         this.LAST_NAME = LAST_NAME;
         this.INFO = INFO;
@@ -27,7 +27,7 @@ public class inquirer {
         return INFO;
     }
 
-    public String getServicesPhone() {
+    public String getServicesPhoneNum() {
         return SERVICES_PHONE;
     }
 

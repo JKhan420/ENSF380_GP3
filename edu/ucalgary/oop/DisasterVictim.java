@@ -1,12 +1,10 @@
 package edu.ucalgary.oop;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-
+// GROUP 22
 public class DisasterVictim {
     // FIELDS
     private String firstName;
@@ -27,7 +25,7 @@ public class DisasterVictim {
             LocalDate.parse(ENTRY_DATE, DateTimeFormatter.ISO_LOCAL_DATE);
         } catch (DateTimeParseException e) {
             throw new IllegalArgumentException("Invalid entry date format. Please use YYYY-MM-DD.");
-            return;
+            
         }
         this.firstName = firstName;
         this.ENTRY_DATE = ENTRY_DATE;

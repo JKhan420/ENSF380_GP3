@@ -1,5 +1,5 @@
 package edu.ucalgary.oop;
-
+// GROUP 22
 public class FamilyRelation {
     // FIELDS
     private DisasterVictim personOne;

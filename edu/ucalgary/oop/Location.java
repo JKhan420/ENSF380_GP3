@@ -1,4 +1,5 @@
 package edu.ucalgary.oop;
+// GROUP 22
 public class Location {
     // Fields
     private String name;
